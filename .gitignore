@@ -1,0 +1,24 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid
+<<<<<<< HEAD
+=======
+/CadastroServidores/nbproject/private/
+/CadastroServidores/build/
+<<<<<<< HEAD
+/CadastoDeServidores/build/
+/CadastoDeServidores/dist/
+=======
+>>>>>>> b46f72589fb4a6743a26d1ed2d27cec4bdd80f1c
+/CadastoDeServidores/build/
+/Cadasto_de_Servidores/nbproject/private/
+>>>>>>> 8c1ed5adc20c26068b1979b163e1852948e1a90b
