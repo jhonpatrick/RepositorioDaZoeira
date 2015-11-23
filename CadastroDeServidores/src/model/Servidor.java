@@ -57,40 +57,29 @@ public class Servidor {
     private String dataAdmissaoServ;
 
     private String numCtpsServ; //<<<<<<---- Mudar para String?
-    private long serieCtpsServ;
+    private String serieCtpsServ;
     private String dataEmissaoCtpsServ;
-    private long numPisPasepServ;
+    private String numPisPasepServ;
     private String dataCadastroPisPasepServ;
-    private long identidadeServ;
+    private String identidadeServ;
     private String orgaoIdentidadeServ;
     private String dataEmissaoIdentidadeServ;
-    private long numTituloServ;
-    private long numSessaoTituloServ;
+    private String numTituloServ;
+    private String numSessaoTituloServ;
     private String zonaTituloServ;
     private String numCpfServ;
-    private long certMilitarServ;
+    private String certMilitarServ;
 
     public Servidor() {
         super();
     }
 
-    public Servidor(Endereco endereco_serv, String SIAPE, List<Dependentes> dependentes,
-            String grau_instrucao, String area_formacao,
-            String nomeServ, String sexoServ, String dataNascServ,
-            String estadoCivilServ, String naturalidadeServ,
-            String deficinteFisico, String nomePaiServ, String nomeMaeServ,
-            String cargoServ, String dataEmisaoServ, String numCtpsServ,
-            long serieCtpsServ, String dataEmissaoCtpsServ, long numPasepServ,
-            String dataCadastroPasepServ, long identidadeServ,
-            String orgaoIdentidadeServ, String dataEmissaoIdentidadeServ,
-            long numTituloServ, long numSessaoTituloServ,
-            String zonaTituloServ, String numCpfServ, long certMilitarServ) {
-        this.enderecoServ = endereco_serv;
-        this.dependentesServ = dependentes;
+    public Servidor(Endereco enderecoServ, List<Dependentes> dependentesServ, String grauInstrucaoServ, String areaFormacaoServ, String SIAPE, String sexoServ, String dataNascServ, String estadoCivilServ, String naturalidadeServ, String deficinteFisico, String nomePaiServ, String nomeMaeServ, String cargoServ, String dataAdmissaoServ, String numCtpsServ, String serieCtpsServ, String dataEmissaoCtpsServ, String numPisPasepServ, String dataCadastroPisPasepServ, String identidadeServ, String orgaoIdentidadeServ, String dataEmissaoIdentidadeServ, String numTituloServ, String numSessaoTituloServ, String zonaTituloServ, String numCpfServ, String certMilitarServ) {
+        this.enderecoServ = enderecoServ;
+        this.dependentesServ = dependentesServ;
+        this.grauInstrucaoServ = grauInstrucaoServ;
+        this.areaFormacaoServ = areaFormacaoServ;
         this.SIAPE = SIAPE;
-        this.grauInstrucaoServ = grau_instrucao;
-        this.areaFormacaoServ = area_formacao;
-        this.nomeServ = nomeServ;
         this.sexoServ = sexoServ;
         this.dataNascServ = dataNascServ;
         this.estadoCivilServ = estadoCivilServ;
@@ -99,12 +88,12 @@ public class Servidor {
         this.nomePaiServ = nomePaiServ;
         this.nomeMaeServ = nomeMaeServ;
         this.cargoServ = cargoServ;
-        this.dataAdmissaoServ = dataEmisaoServ;
+        this.dataAdmissaoServ = dataAdmissaoServ;
         this.numCtpsServ = numCtpsServ;
         this.serieCtpsServ = serieCtpsServ;
         this.dataEmissaoCtpsServ = dataEmissaoCtpsServ;
-        this.numPisPasepServ = numPasepServ;
-        this.dataCadastroPisPasepServ = dataCadastroPasepServ;
+        this.numPisPasepServ = numPisPasepServ;
+        this.dataCadastroPisPasepServ = dataCadastroPisPasepServ;
         this.identidadeServ = identidadeServ;
         this.orgaoIdentidadeServ = orgaoIdentidadeServ;
         this.dataEmissaoIdentidadeServ = dataEmissaoIdentidadeServ;
@@ -115,22 +104,11 @@ public class Servidor {
         this.certMilitarServ = certMilitarServ;
     }
 
-    public Servidor(Endereco endereco_serv, List<Dependentes> dependentes,
-            String grau_instrucao, String area_formacao, String nomeServ,
-            String sexoServ, String dataNascServ, String estadoCivilServ,
-            String naturalidadeServ, String deficinteFisico,
-            String nomePaiServ, String nomeMaeServ, String cargoServ,
-            String dataEmisaoServ, String numCtpsServ, long serieCtpsServ,
-            String dataEmissaoCtpsServ, long numPasepServ,
-            String dataCadastroPasepServ, long identidadeServ,
-            String orgaoIdentidadeServ, String dataEmissaoIdentidadeServ,
-            long numTituloServ, long numSessaoTituloServ,
-            String zonaTituloServ, String numCpfServ, long certMilitarServ) {
-        this.enderecoServ = endereco_serv;
-        this.dependentesServ = dependentes;
-        this.grauInstrucaoServ = grau_instrucao;
-        this.areaFormacaoServ = area_formacao;
-        this.nomeServ = nomeServ;
+    public Servidor(Endereco enderecoServ, List<Dependentes> dependentesServ, String grauInstrucaoServ, String areaFormacaoServ, String sexoServ, String dataNascServ, String estadoCivilServ, String naturalidadeServ, String deficinteFisico, String nomePaiServ, String nomeMaeServ, String cargoServ, String dataAdmissaoServ, String numCtpsServ, String serieCtpsServ, String dataEmissaoCtpsServ, String numPisPasepServ, String dataCadastroPisPasepServ, String identidadeServ, String orgaoIdentidadeServ, String dataEmissaoIdentidadeServ, String numTituloServ, String numSessaoTituloServ, String zonaTituloServ, String numCpfServ, String certMilitarServ) {
+        this.enderecoServ = enderecoServ;
+        this.dependentesServ = dependentesServ;
+        this.grauInstrucaoServ = grauInstrucaoServ;
+        this.areaFormacaoServ = areaFormacaoServ;
         this.sexoServ = sexoServ;
         this.dataNascServ = dataNascServ;
         this.estadoCivilServ = estadoCivilServ;
@@ -139,12 +117,12 @@ public class Servidor {
         this.nomePaiServ = nomePaiServ;
         this.nomeMaeServ = nomeMaeServ;
         this.cargoServ = cargoServ;
-        this.dataAdmissaoServ = dataEmisaoServ;
+        this.dataAdmissaoServ = dataAdmissaoServ;
         this.numCtpsServ = numCtpsServ;
         this.serieCtpsServ = serieCtpsServ;
         this.dataEmissaoCtpsServ = dataEmissaoCtpsServ;
-        this.numPisPasepServ = numPasepServ;
-        this.dataCadastroPisPasepServ = dataCadastroPasepServ;
+        this.numPisPasepServ = numPisPasepServ;
+        this.dataCadastroPisPasepServ = dataCadastroPisPasepServ;
         this.identidadeServ = identidadeServ;
         this.orgaoIdentidadeServ = orgaoIdentidadeServ;
         this.dataEmissaoIdentidadeServ = dataEmissaoIdentidadeServ;
@@ -154,7 +132,7 @@ public class Servidor {
         this.numCpfServ = numCpfServ;
         this.certMilitarServ = certMilitarServ;
     }
-
+    
     public Endereco getEnderecoServ() {
         return enderecoServ;
     }
@@ -193,14 +171,6 @@ public class Servidor {
 
     public void setGrauInstrucaoServ(String grauInstrucaoServ) {
         this.grauInstrucaoServ = grauInstrucaoServ;
-    }
-
-    public String getArea_formacao() {
-        return areaFormacaoServ;
-    }
-
-    public void setArea_formacao(String area_formacao) {
-        this.areaFormacaoServ = area_formacao;
     }
 
     public String getNomeServ() {
@@ -292,11 +262,11 @@ public class Servidor {
         this.numCtpsServ = numCtpsServ;
     }
 
-    public long getSerieCtpsServ() {
+    public String getSerieCtpsServ() {
         return serieCtpsServ;
     }
 
-    public void setSerieCtpsServ(long serieCtpsServ) {
+    public void setSerieCtpsServ(String serieCtpsServ) {
         this.serieCtpsServ = serieCtpsServ;
     }
 
@@ -308,11 +278,11 @@ public class Servidor {
         this.dataEmissaoCtpsServ = dataEmissaoCtpsServ;
     }
 
-    public long getNumPisPasepServ() {
+    public String getNumPisPasepServ() {
         return numPisPasepServ;
     }
 
-    public void setNumPisPasepServ(long numPisPasepServ) {
+    public void setNumPisPasepServ(String numPisPasepServ) {
         this.numPisPasepServ = numPisPasepServ;
     }
 
@@ -325,11 +295,11 @@ public class Servidor {
         this.dataCadastroPisPasepServ = dataCadastroPisPasepServ;
     }
 
-    public long getIdentidadeServ() {
+    public String getIdentidadeServ() {
         return identidadeServ;
     }
 
-    public void setIdentidadeServ(long identidadeServ) {
+    public void setIdentidadeServ(String identidadeServ) {
         this.identidadeServ = identidadeServ;
     }
 
@@ -349,19 +319,19 @@ public class Servidor {
         this.dataEmissaoIdentidadeServ = dataEmissaoIdentidadeServ;
     }
 
-    public long getNumTituloServ() {
+    public String getNumTituloServ() {
         return numTituloServ;
     }
 
-    public void setNumTituloServ(long numTituloServ) {
+    public void setNumTituloServ(String numTituloServ) {
         this.numTituloServ = numTituloServ;
     }
 
-    public long getNumSessaoTituloServ() {
+    public String getNumSessaoTituloServ() {
         return numSessaoTituloServ;
     }
 
-    public void setNumSessaoTituloServ(long numSessaoTituloServ) {
+    public void setNumSessaoTituloServ(String numSessaoTituloServ) {
         this.numSessaoTituloServ = numSessaoTituloServ;
     }
 
@@ -381,11 +351,11 @@ public class Servidor {
         this.numCpfServ = numCpfServ;
     }
 
-    public long getCertMilitarServ() {
+    public String getCertMilitarServ() {
         return certMilitarServ;
     }
 
-    public void setCertMilitarServ(long certMilitarServ) {
+    public void setCertMilitarServ(String certMilitarServ) {
         this.certMilitarServ = certMilitarServ;
     }
 

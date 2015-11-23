@@ -31,7 +31,7 @@ public class Endereco {
     private String UF;
     private String cidade;
     private String bairro;
-    private int numero;
+    private String numeroCasa;
     private String rua;
     private String email;
     private String telefone;
@@ -40,24 +40,24 @@ public class Endereco {
         super();
     }
 
-    public Endereco(List<Servidor> servidor, long id, String UF, String cidade, String bairro, int numero, String rua, String email, String telefone) {
+    public Endereco(List<Servidor> servidor, long id, String UF, String cidade, String bairro, String numeroCasa, String rua, String email, String telefone) {
         this.servidor = servidor;
         this.id = id;
         this.UF = UF;
         this.cidade = cidade;
         this.bairro = bairro;
-        this.numero = numero;
+        this.numeroCasa = numeroCasa;
         this.rua = rua;
         this.email = email;
         this.telefone = telefone;
     }
 
-    public Endereco(List<Servidor> servidor, String UF, String cidade, String bairro, int numero, String rua, String email, String telefone) {
+    public Endereco(List<Servidor> servidor, String UF, String cidade, String bairro, String numeroCasa, String rua, String email, String telefone) {
         this.servidor = servidor;
         this.UF = UF;
         this.cidade = cidade;
         this.bairro = bairro;
-        this.numero = numero;
+        this.numeroCasa = numeroCasa;
         this.rua = rua;
         this.email = email;
         this.telefone = telefone;
@@ -103,12 +103,12 @@ public class Endereco {
         this.bairro = bairro;
     }
 
-    public int getNumero() {
-        return numero;
+    public String getNumeroCasa() {
+        return numeroCasa;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public void setNumeroCasa(String numeroCasa) {
+        this.numeroCasa = numeroCasa;
     }
 
     public String getRua() {
@@ -160,7 +160,7 @@ public class Endereco {
     @Override
     public String toString() {
         return "Endereço{ " + "Id do Endereço= " + id + ", Servidor Neste Endereço= " + servidor + ", UF= " + UF + ",\n" +
-                " Cidade=" + cidade + ", Bairro=" + bairro + ", Número= " + numero + ",\n" +
+                " Cidade=" + cidade + ", Bairro=" + bairro + ", Número d casa= " + numeroCasa + ",\n" +
                 " Rua= " + rua + ", E-mail= " + email + ", Telefone= " + telefone + " }" + ",\n";
     }
 

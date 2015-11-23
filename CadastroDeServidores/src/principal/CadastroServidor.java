@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,11 +6,25 @@
  */
 package principal;
 
+import dao.ServidorDAO;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import model.Dependentes;
+import model.Endereco;
+import model.Servidor;
+
 /**
  *
  * @author Patrick Rodrigues
  */
 public class CadastroServidor extends javax.swing.JFrame {
+
+    Servidor servidor;
+    Endereco endereco;
+    Dependentes dependentes1, dependentes2, dependentes3;
+    List<Dependentes> listDependentes;
+    ServidorDAO sDAO = new ServidorDAO();
 
     /**
      * Creates new form CadastroServidor
@@ -28,6 +43,101 @@ public class CadastroServidor extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel499 = new javax.swing.JLabel();
+        jLabel500 = new javax.swing.JLabel();
+        jLabel501 = new javax.swing.JLabel();
+        jLabel502 = new javax.swing.JLabel();
+        jLabel503 = new javax.swing.JLabel();
+        imgIfpiLogo14 = new javax.swing.JLabel();
+        jLabel504 = new javax.swing.JLabel();
+        jlbNome14 = new javax.swing.JLabel();
+        txfNomeServ = new javax.swing.JTextField();
+        jlbSiaepi14 = new javax.swing.JLabel();
+        txfSiaepi = new javax.swing.JTextField();
+        jlbCargo12 = new javax.swing.JLabel();
+        txfCargo = new javax.swing.JTextField();
+        jLabel505 = new javax.swing.JLabel();
+        txfDataEmissaoCargo = new javax.swing.JTextField();
+        jLabel506 = new javax.swing.JLabel();
+        txfDataNascimentoServ = new javax.swing.JTextField();
+        jLabel507 = new javax.swing.JLabel();
+        txfNaturalidadeServ = new javax.swing.JTextField();
+        jSeparator15 = new javax.swing.JSeparator();
+        jLabel508 = new javax.swing.JLabel();
+        txfEstadoCivilServ = new javax.swing.JTextField();
+        jLabel509 = new javax.swing.JLabel();
+        jLabel510 = new javax.swing.JLabel();
+        txfUF = new javax.swing.JTextField();
+        jLabel511 = new javax.swing.JLabel();
+        txfCidade = new javax.swing.JTextField();
+        jLabel512 = new javax.swing.JLabel();
+        txfBairro = new javax.swing.JTextField();
+        jLabel513 = new javax.swing.JLabel();
+        txfRua = new javax.swing.JTextField();
+        jLabel514 = new javax.swing.JLabel();
+        txfNumeroDaCasa = new javax.swing.JTextField();
+        jLabel515 = new javax.swing.JLabel();
+        txfTelefone = new javax.swing.JTextField();
+        jLabel516 = new javax.swing.JLabel();
+        txfEmail = new javax.swing.JTextField();
+        jLabel517 = new javax.swing.JLabel();
+        txfCtps = new javax.swing.JTextField();
+        jLabel518 = new javax.swing.JLabel();
+        txfSerieCtps = new javax.swing.JTextField();
+        jLabel519 = new javax.swing.JLabel();
+        txfDataEmissaoCtps = new javax.swing.JTextField();
+        jLabel520 = new javax.swing.JLabel();
+        txfnumPisPasep = new javax.swing.JTextField();
+        jLabel521 = new javax.swing.JLabel();
+        txfDataCadastroPasep = new javax.swing.JTextField();
+        jLabel522 = new javax.swing.JLabel();
+        txfIdentidade = new javax.swing.JTextField();
+        jLabel523 = new javax.swing.JLabel();
+        txfOrgao = new javax.swing.JTextField();
+        jLabel524 = new javax.swing.JLabel();
+        txfDataEmissaoIdentidade = new javax.swing.JTextField();
+        jLabel525 = new javax.swing.JLabel();
+        txfNumTituloServ = new javax.swing.JTextField();
+        jLabel526 = new javax.swing.JLabel();
+        txfNumSecaoTitulo = new javax.swing.JTextField();
+        jLabel527 = new javax.swing.JLabel();
+        txfZonaTitulo = new javax.swing.JTextField();
+        jLabel528 = new javax.swing.JLabel();
+        txfNumCpfServ = new javax.swing.JTextField();
+        jLabel529 = new javax.swing.JLabel();
+        txfCertMilitar = new javax.swing.JTextField();
+        jLabel530 = new javax.swing.JLabel();
+        txfNomePai = new javax.swing.JTextField();
+        jLabel531 = new javax.swing.JLabel();
+        txfNomeMae = new javax.swing.JTextField();
+        jLabel532 = new javax.swing.JLabel();
+        txfGrauDeInstrucao = new javax.swing.JTextField();
+        jLabel533 = new javax.swing.JLabel();
+        txfAreaDeFormacao = new javax.swing.JTextField();
+        btnSalvar = new javax.swing.JButton();
+        jLabel49 = new javax.swing.JLabel();
+        txfNomeDependente1 = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
+        txfDataNascDep1 = new javax.swing.JTextField();
+        jLabel51 = new javax.swing.JLabel();
+        txfParentescoDep1 = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
+        CaixaSexo = new javax.swing.JComboBox<String>();
+        bntSair = new javax.swing.JButton();
+        caixaDeficFisic = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txfNomeDependente2 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txfDependete3 = new javax.swing.JTextField();
+        txfDataNascDep2 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txfDataNascDep3 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txfParentescoDep2 = new javax.swing.JTextField();
+        txfParentescoDep3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -35,11 +145,309 @@ public class CadastroServidor extends javax.swing.JFrame {
 
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 280));
+
+        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel499.setText("INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO");
+        jPanel16.add(jLabel499, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 21, -1, -1));
+
+        jLabel500.setText("PIAUI");
+        jPanel16.add(jLabel500, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 41, -1, -1));
+
+        jLabel501.setText("CAMPUS PARNAÍBA");
+        jPanel16.add(jLabel501, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 61, -1, -1));
+
+        jLabel502.setText("COORDENAÇÃO DE RECURSOS HUMANOS");
+        jPanel16.add(jLabel502, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 81, -1, -1));
+
+        jLabel503.setText("FICHA DE CADASTRO DE SERVIDORES");
+        jPanel16.add(jLabel503, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, -1, -1));
+
+        imgIfpiLogo14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Ifpi02.png"))); // NOI18N
+        jPanel16.add(imgIfpiLogo14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 121));
+
+        jLabel504.setText("MINISTERIO DA EDUCAÇÃO");
+        jPanel16.add(jLabel504, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 1, -1, -1));
+
+        jlbNome14.setText("NOME:");
+        jPanel16.add(jlbNome14, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 163, -1, -1));
+        jPanel16.add(txfNomeServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 160, 720, -1));
+
+        jlbSiaepi14.setText("SIAEPI:");
+        jPanel16.add(jlbSiaepi14, new org.netbeans.lib.awtextra.AbsoluteConstraints(916, 168, -1, -1));
+        jPanel16.add(txfSiaepi, new org.netbeans.lib.awtextra.AbsoluteConstraints(978, 165, 98, -1));
+
+        jlbCargo12.setText("CARGO:");
+        jPanel16.add(jlbCargo12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
+        jPanel16.add(txfCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 186, 720, -1));
+
+        jLabel505.setText("DATA DE ADMISSÃO:");
+        jPanel16.add(jLabel505, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 194, -1, -1));
+        jPanel16.add(txfDataEmissaoCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(978, 191, 98, -1));
+
+        jLabel506.setText("DATA NASCIMENTO:");
+        jPanel16.add(jLabel506, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 213, -1, -1));
+        jPanel16.add(txfDataNascimentoServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 210, 150, -1));
+
+        jLabel507.setText("NATURALIDADE:");
+        jPanel16.add(jLabel507, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
+        jPanel16.add(txfNaturalidadeServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 212, 362, -1));
+        jPanel16.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, 190, -1));
+
+        jLabel508.setText("ESTADO CIVIL:");
+        jPanel16.add(jLabel508, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 246, -1, -1));
+        jPanel16.add(txfEstadoCivilServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 238, 720, 30));
+
+        jLabel509.setText("DEFICIENTE FíSICO?");
+        jPanel16.add(jLabel509, new org.netbeans.lib.awtextra.AbsoluteConstraints(853, 249, -1, -1));
+
+        jLabel510.setText("UF:");
+        jPanel16.add(jLabel510, new org.netbeans.lib.awtextra.AbsoluteConstraints(951, 277, -1, -1));
+        jPanel16.add(txfUF, new org.netbeans.lib.awtextra.AbsoluteConstraints(978, 274, 98, -1));
+
+        jLabel511.setText("CIDADE:");
+        jPanel16.add(jLabel511, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
+        jPanel16.add(txfCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 274, 310, -1));
+
+        jLabel512.setText("BAIRRO:");
+        jPanel16.add(jLabel512, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 277, -1, -1));
+        jPanel16.add(txfBairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(488, 274, 354, -1));
+
+        jLabel513.setText("RUA:");
+        jPanel16.add(jLabel513, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 303, -1, -1));
+        jPanel16.add(txfRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 300, 720, -1));
+
+        jLabel514.setText("NÚMERO DA CASA:");
+        jPanel16.add(jLabel514, new org.netbeans.lib.awtextra.AbsoluteConstraints(874, 303, -1, -1));
+        jPanel16.add(txfNumeroDaCasa, new org.netbeans.lib.awtextra.AbsoluteConstraints(978, 300, 98, -1));
+
+        jLabel515.setText("CONTATO:");
+        jPanel16.add(jLabel515, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
+        jPanel16.add(txfTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 326, 950, -1));
+
+        jLabel516.setText("E-MAIL:");
+        jPanel16.add(jLabel516, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, -1, 20));
+        jPanel16.add(txfEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 352, 951, -1));
+
+        jLabel517.setText("CTPS Nº:");
+        jPanel16.add(jLabel517, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 384, -1, -1));
+        jPanel16.add(txfCtps, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 381, 197, -1));
+
+        jLabel518.setText("SÉRIE:");
+        jPanel16.add(jLabel518, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 387, -1, -1));
+        jPanel16.add(txfSerieCtps, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 384, 149, -1));
+
+        jLabel519.setText("EMISSÃO EM:");
+        jPanel16.add(jLabel519, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 384, -1, -1));
+        jPanel16.add(txfDataEmissaoCtps, new org.netbeans.lib.awtextra.AbsoluteConstraints(673, 381, 403, -1));
+
+        jLabel520.setText("PIS/PASEP N°:");
+        jPanel16.add(jLabel520, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 413, -1, -1));
+        jPanel16.add(txfnumPisPasep, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 410, 417, -1));
+
+        jLabel521.setText("CADASTRADO EM:");
+        jPanel16.add(jLabel521, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 413, -1, -1));
+        jPanel16.add(txfDataCadastroPasep, new org.netbeans.lib.awtextra.AbsoluteConstraints(673, 410, 403, -1));
+
+        jLabel522.setText("IDENTIDADE:");
+        jPanel16.add(jLabel522, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 439, -1, -1));
+        jPanel16.add(txfIdentidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 436, 220, -1));
+
+        jLabel523.setText("ORGÃO:");
+        jPanel16.add(jLabel523, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 439, -1, -1));
+        jPanel16.add(txfOrgao, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 436, 149, -1));
+
+        jLabel524.setText("EMISSÃO EM:");
+        jPanel16.add(jLabel524, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 439, -1, -1));
+        jPanel16.add(txfDataEmissaoIdentidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(673, 436, 403, -1));
+
+        jLabel525.setText("N.° TÍTULO");
+        jPanel16.add(jLabel525, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 464, -1, -1));
+        jPanel16.add(txfNumTituloServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 461, 220, -1));
+
+        jLabel526.setText("SEÇÃO:");
+        jPanel16.add(jLabel526, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 464, -1, -1));
+        jPanel16.add(txfNumSecaoTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 461, 149, -1));
+
+        jLabel527.setText("ZONA/UF:");
+        jPanel16.add(jLabel527, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 464, -1, -1));
+        jPanel16.add(txfZonaTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(673, 461, 403, -1));
+
+        jLabel528.setText("CPF N.°:");
+        jPanel16.add(jLabel528, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 495, -1, -1));
+        jPanel16.add(txfNumCpfServ, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 492, 418, -1));
+
+        jLabel529.setText("CERT. MILITAR:");
+        jPanel16.add(jLabel529, new org.netbeans.lib.awtextra.AbsoluteConstraints(591, 490, -1, -1));
+        jPanel16.add(txfCertMilitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(673, 487, 403, -1));
+
+        jLabel530.setText("NOME DO PAI:");
+        jPanel16.add(jLabel530, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 521, -1, -1));
+        jPanel16.add(txfNomePai, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 518, 952, -1));
+
+        jLabel531.setText("NOME DA MÃE:");
+        jPanel16.add(jLabel531, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 547, -1, -1));
+        jPanel16.add(txfNomeMae, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 544, 952, -1));
+
+        jLabel532.setText("GRAU DE INSTRUÇÃO:");
+        jPanel16.add(jLabel532, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 573, -1, -1));
+        jPanel16.add(txfGrauDeInstrucao, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 570, 952, -1));
+
+        jLabel533.setText("ÁREA DE FORMAÇÃO:");
+        jPanel16.add(jLabel533, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 599, -1, -1));
+        jPanel16.add(txfAreaDeFormacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 596, 952, -1));
+
+        btnSalvar.setBackground(new java.awt.Color(153, 153, 153));
+        btnSalvar.setFont(new java.awt.Font("Nirmala UI", 2, 14)); // NOI18N
+        btnSalvar.setForeground(new java.awt.Color(0, 0, 204));
+        btnSalvar.setText("SALVAR");
+        btnSalvar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
+        jPanel16.add(btnSalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 622, 173, -1));
+
+        jLabel49.setText("DEPENDENTE(1):");
+        jPanel16.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 625, -1, -1));
+        jPanel16.add(txfNomeDependente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 622, 334, -1));
+
+        jLabel50.setText("D. DE NASCIMENTO:");
+        jPanel16.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 625, -1, -1));
+        jPanel16.add(txfDataNascDep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(568, 622, 122, -1));
+
+        jLabel51.setText("PARENTESCO:");
+        jPanel16.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 625, -1, -1));
+        jPanel16.add(txfParentescoDep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(774, 622, 113, -1));
+
+        jLabel52.setText("SEXO:");
+        jPanel16.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(923, 220, -1, -1));
+
+        CaixaSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Feminino" }));
+        CaixaSexo.setToolTipText("");
+        CaixaSexo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CaixaSexo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel16.add(CaixaSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(978, 215, 98, 25));
+
+        bntSair.setBackground(new java.awt.Color(153, 153, 153));
+        bntSair.setFont(new java.awt.Font("Nirmala UI", 2, 14)); // NOI18N
+        bntSair.setForeground(new java.awt.Color(102, 204, 0));
+        bntSair.setText("SAIR");
+        bntSair.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        bntSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntSairActionPerformed(evt);
+            }
+        });
+        jPanel16.add(bntSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 669, 173, -1));
+
+        caixaDeficFisic.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sim", "Não" }));
+        caixaDeficFisic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        caixaDeficFisic.setMinimumSize(new java.awt.Dimension(71, 20));
+        caixaDeficFisic.setPreferredSize(new java.awt.Dimension(71, 20));
+        jPanel16.add(caixaDeficFisic, new org.netbeans.lib.awtextra.AbsoluteConstraints(978, 245, 98, 23));
+
+        jLabel1.setText("DEPENDENTE(2):");
+        jPanel16.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 650, -1, -1));
+
+        jLabel2.setText("DEPENDENTE(3):");
+        jPanel16.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 677, -1, -1));
+        jPanel16.add(txfNomeDependente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 647, 334, -1));
+
+        jLabel3.setText("D. DE NASCIMENTO:");
+        jPanel16.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 650, -1, -1));
+
+        jLabel4.setText("PARENTESCO:");
+        jPanel16.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 650, -1, -1));
+        jPanel16.add(txfDependete3, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 674, 334, -1));
+        jPanel16.add(txfDataNascDep2, new org.netbeans.lib.awtextra.AbsoluteConstraints(568, 647, 122, -1));
+
+        jLabel5.setText("D. DE NASCIMENTO:");
+        jPanel16.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 677, -1, -1));
+        jPanel16.add(txfDataNascDep3, new org.netbeans.lib.awtextra.AbsoluteConstraints(568, 674, 122, -1));
+
+        jLabel6.setText("PARENTESCO:");
+        jPanel16.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 677, -1, -1));
+        jPanel16.add(txfParentescoDep2, new org.netbeans.lib.awtextra.AbsoluteConstraints(774, 647, 113, -1));
+        jPanel16.add(txfParentescoDep3, new org.netbeans.lib.awtextra.AbsoluteConstraints(774, 674, 113, -1));
+
+        jScrollPane1.setViewportView(jPanel16);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1110, 730));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        Servidor s1 = new Servidor();
+        ServidorDAO s1DAO = new ServidorDAO();
+        Endereco end1 = new Endereco();
+        List<Dependentes> lisDep = new ArrayList<Dependentes>();
+        Dependentes dep1 = new Dependentes();
+
+        s1.setNomeServ("Patrick Rodrigues");
+        s1.setSIAPE("JP123");
+        s1.setCargoServ("Programador Java");
+        s1.setDataAdmissaoServ("12/11/2015");
+        s1.setDataNascServ("15/11/1995");
+        s1.setNaturalidadeServ("Imperatiz");
+        s1.setSexoServ("Masculino");
+        s1.setEstadoCivilServ("Solteiro");
+        s1.setDeficinteFisico("Não");
+
+        //setando o endereco do servido1 = s1
+        end1.setCidade("Parnaíba");
+        end1.setBairro("Centro");
+        end1.setUF("PI");
+        end1.setRua("Prudente de Moraes");
+        end1.setNumeroCasa("1862");
+        end1.setTelefone("(86) 98103-1035");
+        end1.setEmail("patrickzik@outlook.com / suporte@tdainformatica.com.br / patrickrodrigueszik52@gmail.com");
+        s1.setEnderecoServ(end1);
+
+        //continuando dados do servidor
+        s1.setNumCtpsServ("00998899");
+        s1.setSerieCtpsServ("023");
+        s1.setDataEmissaoCtpsServ("12/10/2000");
+        s1.setNumPisPasepServ("023423");
+        s1.setDataCadastroPisPasepServ("23/02/2013");
+        s1.setIdentidadeServ("002");
+        s1.setOrgaoIdentidadeServ("SSPMA");
+        s1.setDataEmissaoIdentidadeServ("12/01/1990");
+        s1.setNumTituloServ("0230102010120");
+        s1.setNumSessaoTituloServ("23456787654");
+        s1.setZonaTituloServ("MA");
+        s1.setNumCpfServ("09803401207888");
+        s1.setCertMilitarServ("76543456789");
+        s1.setNomePaiServ("João Vila Nova da Silva");
+        s1.setNomeMaeServ("Maria Aparecida Rodrigues da Silva");
+        s1.setGrauInstrucaoServ("Ensino Médio - Completo");
+        s1.setAreaFormacaoServ("CIENCIAS DA COMPUTAÇÃO");
+
+        //setando a lista de dependentes do servidor
+        dep1.setNomeDependente("Layla Leticia Rodrigues de Miranda");
+        dep1.setDataNascimentoDependente("12/12/2000");
+        dep1.setParentesco("Irmã (Chata)");
+        lisDep.add(dep1);
+        s1.setDependentesServ(lisDep);
+
+        try {
+            s1DAO.salvar(s1);
+            JOptionPane.showMessageDialog(null, "Deu Certo!");
+            System.out.println("Não Deu Certo! ");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Não Deu Certo! " + e.getMessage());
+            System.out.println("Não Deu Certo! " + e.getMessage());
+        }
+
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void bntSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntSairActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_bntSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,6 +485,101 @@ public class CadastroServidor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> CaixaSexo;
+    private javax.swing.JButton bntSair;
+    private javax.swing.JButton btnSalvar;
+    private javax.swing.JComboBox caixaDeficFisic;
+    private javax.swing.JLabel imgIfpiLogo14;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel499;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel500;
+    private javax.swing.JLabel jLabel501;
+    private javax.swing.JLabel jLabel502;
+    private javax.swing.JLabel jLabel503;
+    private javax.swing.JLabel jLabel504;
+    private javax.swing.JLabel jLabel505;
+    private javax.swing.JLabel jLabel506;
+    private javax.swing.JLabel jLabel507;
+    private javax.swing.JLabel jLabel508;
+    private javax.swing.JLabel jLabel509;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel510;
+    private javax.swing.JLabel jLabel511;
+    private javax.swing.JLabel jLabel512;
+    private javax.swing.JLabel jLabel513;
+    private javax.swing.JLabel jLabel514;
+    private javax.swing.JLabel jLabel515;
+    private javax.swing.JLabel jLabel516;
+    private javax.swing.JLabel jLabel517;
+    private javax.swing.JLabel jLabel518;
+    private javax.swing.JLabel jLabel519;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel520;
+    private javax.swing.JLabel jLabel521;
+    private javax.swing.JLabel jLabel522;
+    private javax.swing.JLabel jLabel523;
+    private javax.swing.JLabel jLabel524;
+    private javax.swing.JLabel jLabel525;
+    private javax.swing.JLabel jLabel526;
+    private javax.swing.JLabel jLabel527;
+    private javax.swing.JLabel jLabel528;
+    private javax.swing.JLabel jLabel529;
+    private javax.swing.JLabel jLabel530;
+    private javax.swing.JLabel jLabel531;
+    private javax.swing.JLabel jLabel532;
+    private javax.swing.JLabel jLabel533;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JLabel jlbCargo12;
+    private javax.swing.JLabel jlbNome14;
+    private javax.swing.JLabel jlbSiaepi14;
+    private javax.swing.JTextField txfAreaDeFormacao;
+    private javax.swing.JTextField txfBairro;
+    private javax.swing.JTextField txfCargo;
+    private javax.swing.JTextField txfCertMilitar;
+    private javax.swing.JTextField txfCidade;
+    private javax.swing.JTextField txfCtps;
+    private javax.swing.JTextField txfDataCadastroPasep;
+    private javax.swing.JTextField txfDataEmissaoCargo;
+    private javax.swing.JTextField txfDataEmissaoCtps;
+    private javax.swing.JTextField txfDataEmissaoIdentidade;
+    private javax.swing.JTextField txfDataNascDep1;
+    private javax.swing.JTextField txfDataNascDep2;
+    private javax.swing.JTextField txfDataNascDep3;
+    private javax.swing.JTextField txfDataNascimentoServ;
+    private javax.swing.JTextField txfDependete3;
+    private javax.swing.JTextField txfEmail;
+    private javax.swing.JTextField txfEstadoCivilServ;
+    private javax.swing.JTextField txfGrauDeInstrucao;
+    private javax.swing.JTextField txfIdentidade;
+    private javax.swing.JTextField txfNaturalidadeServ;
+    private javax.swing.JTextField txfNomeDependente1;
+    private javax.swing.JTextField txfNomeDependente2;
+    private javax.swing.JTextField txfNomeMae;
+    private javax.swing.JTextField txfNomePai;
+    private javax.swing.JTextField txfNomeServ;
+    private javax.swing.JTextField txfNumCpfServ;
+    private javax.swing.JTextField txfNumSecaoTitulo;
+    private javax.swing.JTextField txfNumTituloServ;
+    private javax.swing.JTextField txfNumeroDaCasa;
+    private javax.swing.JTextField txfOrgao;
+    private javax.swing.JTextField txfParentescoDep1;
+    private javax.swing.JTextField txfParentescoDep2;
+    private javax.swing.JTextField txfParentescoDep3;
+    private javax.swing.JTextField txfRua;
+    private javax.swing.JTextField txfSerieCtps;
+    private javax.swing.JTextField txfSiaepi;
+    private javax.swing.JTextField txfTelefone;
+    private javax.swing.JTextField txfUF;
+    private javax.swing.JTextField txfZonaTitulo;
+    private javax.swing.JTextField txfnumPisPasep;
     // End of variables declaration//GEN-END:variables
 }
